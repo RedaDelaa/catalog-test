@@ -12,5 +12,14 @@ MAXIME DECOSTE
 .logo{
     height: 100px;
 }
-
-
+.container form{
+    align-items: center;
+    border: black 10px solid ;
+    padding: 25px;
+    border-radius: 25px
+}
+.container h2{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
