@@ -73,7 +73,7 @@
                     <div class="col">PRIX TOTAL</div>
                     <div class="col text-right"> 325.00 $</div>
                 </div>
-                <a href="paiement.html"><button class="btn text-bg-dark">CHECKOUT</button></a>
+                <a href="paiement.php"><button class="btn text-bg-dark">CHECKOUT</button></a>
             </div>
         </div>
         

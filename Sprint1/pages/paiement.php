@@ -13,7 +13,7 @@
   <div class="formBack">
   <div class="container ">
     <h2>Page de paiement</h2>
-    <form action="Accueil.html" method="post" >
+    <form action="Accueil.php" method="post" >
       <div class="form-group">
         <label for="nom_carte">Nom sur la carte :</label>
         <input type="text"  class="form-control" id="nom_carte" placeholder="Entrez le nom sur la carte" name="nom_carte" required><br>

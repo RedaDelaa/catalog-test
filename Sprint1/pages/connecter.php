@@ -13,7 +13,7 @@
   <div class="formBack">
   <div class="container ">
     <h2>Se connecter</h2>
-    <form action="Accueil.html" method="post" >
+    <form action="Accueil.php" method="post" >
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Entrez votre email" name="email" required>
@@ -26,8 +26,8 @@
         <label><input type="checkbox" name="remember"> Se souvenir</label>
       </div>
       <button type="submit" class="btn btn-lg btn-success" >Connexion></button>
-      <button class="btn btn-lg btn-primary" >Créer un compte</button>
-      <button class="btn btn-lg btn-danger" >Retour</button>
+      <a href="creation.php"><button class="btn btn-lg btn-primary" >Créer un compte</button></a>
+      <a href="Accueil.php"><button class="btn btn-lg btn-danger" >Retour</button></a>
     </form>
   </div>
 </div>

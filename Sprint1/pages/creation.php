@@ -13,7 +13,7 @@
   <div class="formBack">
     <div class="container ">
         <h2>Créer un nouveau compte</h2>
-        <form action="Accueil.html" method="get" >
+        <form action="Accueil.php" method="get" >
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" placeholder="Entrez votre email" name="email" required>
@@ -30,7 +30,7 @@
             <label><input type="checkbox" name="remember"> Se souvenir</label>
           </div>
           <button type="submit" class="btn btn-lg btn-success" >Créer un compte</button>
-          <button href="Accueil.html" class="btn btn-lg btn-danger" >Retour</button>
+          <a href="Accueil.php"><button class="btn btn-lg btn-danger" >Retour</button></a>
         </form>
       </div>
     </div>

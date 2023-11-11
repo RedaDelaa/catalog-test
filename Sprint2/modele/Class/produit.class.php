@@ -54,6 +54,45 @@ class Produit {
 		$message.=" @".round($this->prix,2)."$ (".$this->quantite." en stock)";
 		return $message;
 	}
+	
+    // Méthode pour afficher le produit sous forme de carte HTML
+    public function afficherProduit()
+    {
+        ob_start(); // Démarre la temporisation de la sortie
+
+        ?>
+        <div class="col mb-5">
+            <div class="card h-100">
+                <!-- Sale badge-->
+                <?php if ($this->isEnRabais()) : ?>
+                    <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                <?php endif; ?>
+                <!-- Product image-->
+                <img class="card-img-top" src="<?= $this->getUrlPhoto(); ?>" alt="<?= $this->getDescription(); ?>" />
+                <!-- Product details-->
+                <div class="card-body p-4">
+                    <div class="text-center">
+                        <!-- Product name-->
+                        <h5 class="fw-bolder"><?= $this->getDescription(); ?></h5>
+                        <!-- Product price-->
+                        <?php if ($this->isEnRabais()) : ?>
+                            <span class="text-muted text-decoration-line-through"><?= '$' . number_format($this->getPrix() + 100, 2); ?></span>
+                        <?php endif; ?>
+                        <?= '$' . number_format($this->getPrix(), 2); ?>
+                    </div>
+                </div>
+                <!-- Product actions-->
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter au panier</a></div>
+                </div>
+            </div>
+        </div>
+        <?php
+
+        return ob_get_clean(); // Récupère le contenu du tampon de sortie et l'efface
+    }
+
+
 }
 ?>
 

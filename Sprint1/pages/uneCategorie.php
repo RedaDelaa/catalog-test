@@ -24,7 +24,7 @@ MAXIME DECOSTE
 	<header class="bg-dark py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <a class="navbar-brand" href="Accueil.html"><img src="../images/logoo.png" alt="Logo" height="100px" class="logo"/></a>
+                <a class="navbar-brand" href="Accueil.php"><img src="../images/logoo.png" alt="Logo" height="100px" class="logo"/></a>
                 <h1 class="display-4 fw-bolder">OLD EGG</h1>
                 <p class="lead fw-normal text-white-50 mb-0">Meilleure qualité pour le meilleure prix</p>
             </div>
@@ -38,15 +38,15 @@ MAXIME DECOSTE
             <!-- menu-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="Accueil.html">Accueil</a></li>
-                    <li class="nav-item" ><a class="nav-link" href="connecter.html">Se connecter</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="Accueil.php">Accueil</a></li>
+                    <li class="nav-item" ><a class="nav-link" href="connecter.php">Se connecter</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catégorie</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="uneCategorie.html">GPU</a></li>
-                            <li><a class="dropdown-item" href="uneCategorie.html">CPU</a></li>
-                            <li><a class="dropdown-item" href="uneCategorie.html">Cartes mères</a></li>
-                            <li><a class="dropdown-item" href="uneCategorie.html">Power suplies</a></li>
+                            <li><a class="dropdown-item" href="uneCategorie.php">GPU</a></li>
+                            <li><a class="dropdown-item" href="uneCategorie.php">CPU</a></li>
+                            <li><a class="dropdown-item" href="uneCategorie.php">Cartes mères</a></li>
+                            <li><a class="dropdown-item" href="uneCategorie.php">Power suplies</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -155,7 +155,6 @@ MAXIME DECOSTE
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+
 </body>
 </html>
