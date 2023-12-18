@@ -1,7 +1,6 @@
 <?php
 
 /* Aziz Rayene Delaa */
-
 include_once("produitDAO.interface.php");
 include_once("modele/produit.class.php");
 class ProduitDAO implements DAO

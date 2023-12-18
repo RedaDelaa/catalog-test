@@ -30,13 +30,21 @@ class Utilisateur {
 	public function getMotDePasse() {return $this->motDePasse;}
 
 	// Méthode de vérification du mot de passe
-    public function verifierMotDePasse($motDePasseAVerifier) {
-        return password_verify($motDePasseAVerifier, $this->motDePasse);
-    }
+	public function verifierMotPasse($motAVerifier) { return $this->motPasse == $motAVerifier; }
+	
 	
     // Méthode __toString()
     public function __toString() {
         return "Utilisateur [Nom: {$this->nom}, Prénom: {$this->prenom}, Email: {$this->email}]";
+    }
+    public function creerCookieAuthentification() {
+        // Crée un cookie d'authentification avec une durée de vie de 7 jours
+        setcookie('auth', $this->email, time() + 7 * 24 * 3600, '/');
+    }
+
+    // Méthode pour déconnecter l'utilisateur 
+    public static function deconnecter() {
+        setcookie('auth', '', time() - 3600, '/');
     }
 }
 ?>

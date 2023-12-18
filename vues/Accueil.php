@@ -19,11 +19,18 @@ MAXIME DECOSTE
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="Css/styles.css" rel="stylesheet" />
+    <script src="js/Animations.js"></script>
 </head>
 <body >
-    <?php
+<?php
     include_once "vues/inclusions/entete.inc.php";
-    ?>
+?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    rotateLogo();
+});
+</script>
+
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
         <div class="container px-4 px-lg-5">
@@ -37,16 +44,17 @@ MAXIME DECOSTE
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catégorie</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="?action=categorieProduit">GPU</a></li>
-                            <li><a class="dropdown-item" href="?action=categorieProduit">CPU</a></li>
-                            <li><a class="dropdown-item" href="?action=categorieProduit">Cartes mères</a></li>
-                            <li><a class="dropdown-item" href="?action=categorieProduit">Power suplies</a></li>
+                            <li><a class="dropdown-item" href="?action=categorieProduit1">GPU</a></li>
+                            <li><a class="dropdown-item" href="?action=categorieProduit2">CPU</a></li>
+                            <li><a class="dropdown-item" href="?action=categorieProduit3">Cartes mères</a></li>
+                            <li><a class="dropdown-item" href="?action=categorieProduit4">Power suplies</a></li>
+                            <li><a class="dropdown-item" href="?action=categorieProduit5">Écran</a></li>
                         </ul>
                     </li>
-                </ul>
+                  </ul>
                 <form class="d-flex">
                         <i class="bi-cart-fill me-1"></i>
-                        <a href="?action=Panier"><img src="images/cart.png" alt="Logo" height="80px" class="cart"/></a>
+                        <a href="?action=Panier"><img src="images/cart.png" alt="cart" height="80px" class="cart"/></a>
                         <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                 </form>
             </div>

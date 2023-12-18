@@ -7,10 +7,18 @@
 	class Manufacture {
 		public static function creerControleur($action) {
 			$controleur=null;
-			if($action=="categorieProduit"){
-            $controleur = new CategorieProduit();
+			if($action=="categorieProduit1"){
+            $controleur = new CategorieProduit($action);
+			}elseif($action=="categorieProduit2"){
+              $controleur = new CategorieProduit($action);
+			}elseif($action=="categorieProduit3"){
+				$controleur = new CategorieProduit($action);
+			}elseif($action=="categorieProduit4"){
+				$controleur = new CategorieProduit($action);
+			}elseif($action=="categorieProduit5"){
+				$controleur = new CategorieProduit($action);
 			}elseif($action=="Panier"){
-              $controleur = new Panier();
+				$controleur = new Panier();
 			}elseif($action=="connecter"){
 			$controleur = new Connexion();
 		  }

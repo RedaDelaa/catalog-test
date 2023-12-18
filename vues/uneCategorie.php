@@ -21,11 +21,17 @@ MAXIME DECOSTE
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="Css/styles.css" rel="stylesheet" />
+    <script src="js/Animations.js"></script>
 </head>
 <body >
     <?php
     include_once "vues/inclusions/entete.inc.php";
     ?>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    rotateLogo();
+});
+</script>
      <!-- Navigation-->
      <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
         <div class="container px-4 px-lg-5">
@@ -35,14 +41,15 @@ MAXIME DECOSTE
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="?action=voirAccueil">Accueil</a></li>
-                    <li class="nav-item" ><a class="nav-link" href="connecter.php">Se connecter</a></li>
+                    <li class="nav-item" ><a class="nav-link" href="?action=connecter">Se connecter</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catégorie</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="?action=categorieProduit">GPU</a></li>
-                            <li><a class="dropdown-item" href="?action=categorieProduit">CPU</a></li>
-                            <li><a class="dropdown-item" href="?action=categorieProduit">Cartes mères</a></li>
-                            <li><a class="dropdown-item" href="?action=categorieProduit">Power suplies</a></li>
+                            <li><a class="dropdown-item" href="?action=categorieProduit1">GPU</a></li>
+                            <li><a class="dropdown-item" href="?action=categorieProduit2">CPU</a></li>
+                            <li><a class="dropdown-item" href="?action=categorieProduit3">Cartes mères</a></li>
+                            <li><a class="dropdown-item" href="?action=categorieProduit4">Power suplies</a></li>
+                            <li><a class="dropdown-item" href="?action=categorieProduit5">Écran</a></li>
                         </ul>
                     </li>
                 </ul>
