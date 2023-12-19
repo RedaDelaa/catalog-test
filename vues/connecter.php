@@ -1,18 +1,43 @@
 <?php
+global $db;
 include_once("modele/DAO/clientDAO.class.php");
-session_start();
-if (isset($_POST['email']) and isset($_POST['password'])) {$clientDAO = new ClientDAO();
-    $unUtilisateur = $clientDAO->getClientParEmail($_POST['email']);
-
-    if ($unUtilisateur != null) {
-		if ($unUtilisateur->verifierMotPasse($_POST['mot_passe'])) {
-			$_SESSION['utilisateurConnecte'] = $_POST['email'];
-			header("Location: uneCategorie.php");
-		}
-	}
+include_once("modele/DAO/database.php");
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
 }
-elseif (isset($_SESSION['utilisateurConnecte'])) {
-	header("Location: uneCategorie.php");
+
+
+$messageErreur = '';
+
+if (isset($_POST['email']) && isset($_POST['password'])) {
+    $clientDAO = new ClientDAO($db);
+    $donneesUtilisateur = $clientDAO->getClientParEmail($_POST['email']);
+
+    if ($donneesUtilisateur != null) {
+        $unUtilisateur = new Utilisateur(
+            $donneesUtilisateur['nom'],
+            $donneesUtilisateur['prenom'],
+            $donneesUtilisateur['email'],
+            $donneesUtilisateur['mot_de_passe'],
+            $donneesUtilisateur['admin']
+        );
+       // var_dump($unUtilisateur); // Affiche les informations de l'utilisateur
+
+        if ($unUtilisateur->verifierMotPasse($_POST['password'])) {
+
+            // Après une vérification réussie du mot de passe
+            $_SESSION['utilisateurConnecte'] = true;
+            $_SESSION['emailUtilisateur'] = $unUtilisateur->getEmail();
+            $_SESSION['IsAdmin'] =  $donneesUtilisateur['admin'];
+          //  var_dump($_SESSION);
+            header("Location: vues/uneCategorie.php");
+            exit();
+        } else {
+            $messageErreur = "Mot de passe incorrect.";
+        }
+    } else {
+        $messageErreur = "Utilisateur non trouvé.";
+    }
 }
 ?>
 
@@ -41,6 +66,9 @@ elseif (isset($_SESSION['utilisateurConnecte'])) {
   <div class="formBack">
   <div class="container ">
     <h2>Se connecter</h2>
+      <?php if ($messageErreur): ?>
+          <p class="error"><?php echo $messageErreur; ?></p>
+      <?php endif; ?>
     <form id="signupForm" action="?action=connecter" method="post" >
       <div class="form-group">
         <label for="email">Email</label>
