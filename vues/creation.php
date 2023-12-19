@@ -40,7 +40,6 @@
             <label><input type="checkbox" name="remember"> Se souvenir</label>
           </div>
           <button type="submit" class="btn btn-lg btn-success" >Créer un compte</button>
-          <a href="?action=voirAccueil"><button class="btn btn-lg btn-danger" >Retour</button></a>
         </form>
       </div>
     </div>

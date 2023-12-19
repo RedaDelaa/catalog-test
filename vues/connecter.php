@@ -34,14 +34,13 @@ elseif (isset($_SESSION['utilisateurConnecte'])) {
       input.error {
         border: 1px solid red;
       }
-      
     </style>
 </head>
 <body>
   <div class="formBack">
   <div class="container ">
     <h2>Se connecter</h2>
-    <form id="signupForm" action="?action=voirAccueil" method="post" >
+    <form id="signupForm" action="?action=connecter" method="post" >
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Entrez votre email" name="email" required>
@@ -54,9 +53,8 @@ elseif (isset($_SESSION['utilisateurConnecte'])) {
       <div class="checkbox">
         <label><input type="checkbox" name="remember"> Se souvenir</label>
       </div>
+      <a href="?action=creer">Creer un compte <br><br></a>
       <button type="submit" class="btn btn-lg btn-success" >Connexion></button>
-      <a href="?action=creer"><button class="btn btn-lg btn-primary" >Créer un compte</button></a>
-      <a href="?action=voirAccueil"><button class="btn btn-lg btn-danger" >Retour</button></a>
     </form>
   </div>
 </div>

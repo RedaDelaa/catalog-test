@@ -3,6 +3,7 @@
     include_once("controleurs/controleurPanier.class.php");
     include_once("controleurs/controleurCategorieProduit.class.php");
 	include_once("controleurs/controleurConnexion.class.php");
+	include_once("controleurs/controleurPaiement.class.php");
 	include_once("controleurs/controleurCreation.class.php");
 	class Manufacture {
 		public static function creerControleur($action) {
@@ -24,6 +25,9 @@
 		  }
 		  elseif($action=="creer"){
 			$controleur = new Creation();
+		  }
+		  elseif($action=="payer"){
+			$controleur = new Paiement();
 		  }
 			else{
 				$controleur = new AccueilDefaut();
