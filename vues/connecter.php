@@ -1,9 +1,10 @@
 <?php
 include_once("modele/DAO/clientDAO.class.php");
 session_start();
-if (isset($_POST['email']) and isset($_POST['password'])) {
-	$unUtilisateur = ClientDAO::getClientParEmail($_POST['email']);
-	if ($unUtilisateur != null) {
+if (isset($_POST['email']) and isset($_POST['password'])) {$clientDAO = new ClientDAO();
+    $unUtilisateur = $clientDAO->getClientParEmail($_POST['email']);
+
+    if ($unUtilisateur != null) {
 		if ($unUtilisateur->verifierMotPasse($_POST['mot_passe'])) {
 			$_SESSION['utilisateurConnecte'] = $_POST['email'];
 			header("Location: uneCategorie.php");

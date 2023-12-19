@@ -12,9 +12,10 @@ class Utilisateur {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->email = $email;
-        $this->motDePasse = $motDePasse;
+        $this->motDePasse = password_hash($motDePasse, PASSWORD_DEFAULT); // Hachage du mot de passe
         $this->admin = $admin;
     }
+
 
     // Mutateurs
 	public function setNom($nom) {$this->nom = $nom;}
@@ -30,13 +31,17 @@ class Utilisateur {
 	public function getMotDePasse() {return $this->motDePasse;}
 
 	// Méthode de vérification du mot de passe
-	public function verifierMotPasse($motAVerifier) { return $this->motPasse == $motAVerifier; }
+    public function verifierMotPasse($motAVerifier) {
+        return $this->motDePasse == $motAVerifier;
+    }
+
 	
 	
     // Méthode __toString()
     public function __toString() {
         return "Utilisateur [Nom: {$this->nom}, Prénom: {$this->prenom}, Email: {$this->email}]";
     }
+
     public function creerCookieAuthentification() {
         // Crée un cookie d'authentification avec une durée de vie de 7 jours
         setcookie('auth', $this->email, time() + 7 * 24 * 3600, '/');
